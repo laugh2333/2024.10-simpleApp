@@ -1,3 +1,4 @@
+"use client"
 import AddTodo from "@/components/AddTodo"
 import TodoFilter from "@/components/TodoFilter"
 import TodoList from "@/components/TodoList"
@@ -42,9 +43,9 @@ export default function Home() {
   return (
     <div>
       <h1>TodoList</h1>
-      <AddTodo></AddTodo>
-      <TodoList></TodoList>
-      <TodoFilter></TodoFilter>
+      <AddTodo addTodo={addTodo}></AddTodo>
+      <TodoList todos={getFilteredTodos()} deleteTodo={deleteTodo} toggleTodo={toggleTodo}></TodoList>
+      <TodoFilter setFilter={setFilter}></TodoFilter>
     </div>
   )
 }
